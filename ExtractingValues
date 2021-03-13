@@ -1,0 +1,18 @@
+// code to Extract Values
+// run in chrome console or in an javascript console post sourcing the web page loader.
+// document variable here contains the rendered code, change it as per the website loader used
+// Getting actual values
+const elements = document.getElementsByClassName("lbl-licitacao");
+console.log(elements[0].innerText); // publication date 
+console.log("Object: " + document.getElementsByTagName("p")[0].innerText); // object details
+console.log(elements[5].innerText); // bidding date
+// gettting links
+const links = [];
+const linkElements = document.getElementsByClassName("field--type-image");
+for (let i = 0 ; i < linkElements.length; i = i + 1) { 
+let actualLink = linkElements[i].lastChild.href;
+if (actualLink) {
+links.push(actualLink); 
+}
+}
+console.log(links); // all links stored in links array
